@@ -1,5 +1,5 @@
 
-def call(String Repo_URL) {
+def call() {
     pipeline {
         options {
           disableConcurrentBuilds()
