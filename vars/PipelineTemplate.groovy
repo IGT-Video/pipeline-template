@@ -1,5 +1,12 @@
 
 def call() {
+
+    def testext(){ ->
+        sh 'pwd && ls -al'
+        sh 'echo "external step"'
+    }
+
+
     
     pipeline {
         options {
@@ -12,10 +19,7 @@ def call() {
           JIRA_CREDS = credentials('jx-pipeline-issue-jira-jira')
           JX_HELM3 = "true"
         }
-        def testext(){
-            sh 'pwd && ls -al'
-            sh 'echo "external step"'
-        }
+
         stages {
           stage('set repo name') {
               steps {
