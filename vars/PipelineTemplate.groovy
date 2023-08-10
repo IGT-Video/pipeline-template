@@ -5,6 +5,7 @@ def call() {
         sh 'pwd && ls -al'
         sh 'echo "external step"'
     }
+    return testext
     
     pipeline {
         options {
