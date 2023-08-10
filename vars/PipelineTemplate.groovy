@@ -1,5 +1,11 @@
 
 def call() {
+
+    def testext(){
+        sh 'pwd && ls -al'
+        sh 'echo "external step"'
+    }
+    
     pipeline {
         options {
           disableConcurrentBuilds()
@@ -31,6 +37,14 @@ def call() {
                 sh 'echo "Repository Name Again: $APP_NAME"'
               }
             }
+          }
+
+          stage('test ext') {
+              steps{
+                  script{
+                      testext()
+                  }
+              }
           }
         }
     }
