@@ -1,6 +1,4 @@
-
 def call() {
-
     def testext(){
         sh 'pwd && ls -al'
         sh 'echo "external step"'
@@ -50,5 +48,3 @@ def call() {
         }
     }
 }
-
-call()
